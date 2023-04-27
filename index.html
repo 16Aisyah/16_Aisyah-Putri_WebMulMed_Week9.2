@@ -15,20 +15,17 @@
 
 <body>
     <div id="container"></div>
-    <script>
-        var images = [
-            "./images/image1.jpeg",
-            "./images/image2.jpeg",
-            "./images/image3.jpeg",
-            "./images/image4.png",
-            "./images/image5.jpeg",
-        ];
-        var indeks = 0;
+    <script type="text/javascript">
         var container = document.getElementById("container");
+        var images = ["./images/image1.jpeg", "./images/image2.jpeg", "./images/image3.jpeg", "./images/image4.png", "./images/image5.jpeg"];
+        var index = 0;
 
         setInterval(function () {
-            container.style.backgroundImage = "url('" + images[indeks] + "')";
-            indeks = (indeks + 1) % images.length;
+            container.style.backgroundImage = "url(" + images[index] + ")";
+            index++;
+            if (index == images.length) {
+                index = 0;
+            }
         }, 4000);
     </script>
 </body>
